@@ -1,0 +1,224 @@
+Q1. Write a C# program that prompt the user to input three numbers .The program should then output the numbers in ascending order.
+
+ using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace Ascending
+{
+    class Ascending 
+    {
+        static void Main(string[] args)
+        {
+        int a,b,c;
+        Console.WriteLine("Enter three numbers");
+        a = int.Parse (Console.ReadLine());
+        b = int.Parse (Console.ReadLine());
+        c = int.Parse (Console.ReadLine());
+        
+     if (a <= b && b <= c){
+        Console.WriteLine(a+","+ b+","+ c+",");
+     } 
+     else if (a <= c && c <= b){
+         Console.WriteLine(a+","+ c+","+ b+","); 
+     } 
+      else if (b <= a && a <= c){
+          Console.WriteLine(b+","+ a+","+ c+","); 
+      }
+      else if (b <= c && c <= a){
+          Console.WriteLine(b+","+ c+","+ a+","); 
+      }
+      else if (c <= a && a <= b){
+          Console.WriteLine(c+","+ a+","+ b+","); 
+      }
+      else if (c <= b && b <= a){
+          Console.WriteLine(c+","+ b+","+ a+","); 
+      }
+        }
+    }
+}
+
+Q2 .Write a PHP Function ,smallestindex ,that takes as parameters an int array and its size,and returns the index of the smallest element in the array .Also,write a program to test your function .
+
+ using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment_f
+{
+    class Assignment_f
+    {
+     
+static int smallestIndex( int[] arrayElement, int size){
+        int minimum = arrayElement[0];
+       int minimumIndex = 0;
+           for(int i = 0; i < size; i++){
+           if (arrayElement[i] < minimum){
+               minimum = arrayElement[i];
+               minimumIndex = i;
+           }
+       }
+       return minimumIndex;
+    }
+    
+    
+    
+       static void Main(string[] args){
+   
+   int[] ourarray = {1,2,3,4,5};
+  int answer = smallestIndex(ourarray, ourarray.Length);
+           Console.WriteLine(answer);
+        }
+    }
+}
+
+Q3.Write a C# program that prompts the user to input a string and outputs the string in uppercase(Use a character array to store the string)
+
+ using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Convert
+{
+    class Convert 
+    {
+     static void Main(string[] args){
+   String name;
+   Console.WriteLine("Enter the name");
+   name = Console.ReadLine();
+   String[] nameArray = new String[1];
+   nameArray [0] = name;
+   String newname = nameArray[0].ToUpper();
+   Console.WriteLine(newname);
+        }
+    }
+}
+
+Q4. Write a C# program to compute the addition of of N by M matrices.Allow the user to determine the size of the row and column
+
+using System;
+
+public class MatrixAddition
+{
+    public static void Main()
+    {
+        Console.WriteLine("Enter the number of rows for the matrices:");
+        int rows = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Enter the number of columns for the matrices:");
+        int columns = Convert.ToInt32(Console.ReadLine());
+
+        int[,] matrix1 = new int[rows, columns];
+        int[,] matrix2 = new int[rows, columns];
+        int[,] sumMatrix = new int[rows, columns];
+
+        Console.WriteLine("Enter the elements of the first matrix:");
+
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < columns; j++)
+            {
+                Console.Write("Enter element at position ({0}, {1}): ", i, j);
+                matrix1[i, j] = Convert.ToInt32(Console.ReadLine());
+            }
+        }
+
+        Console.WriteLine("Enter the elements of the second matrix:");
+
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < columns; j++)
+            {
+                Console.Write("Enter element at position ({0}, {1}): ", i, j);
+                matrix2[i, j] = Convert.ToInt32(Console.ReadLine());
+            }
+        }
+
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < columns; j++)
+            {
+                sumMatrix[i, j] = matrix1[i, j] + matrix2[i, j];
+            }
+        }
+
+        Console.WriteLine("The sum of the matrices is:");
+
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < columns; j++)
+            {
+                Console.Write(sumMatrix[i, j] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+} 
+
+Q5. Write a C# program that declares an array alpha of 50 components of the type float .Initialize the array so that the first 25 components are equal to the square of the index  variable and the last 25 components are equal to three times the index variable.Output the array so that 10 elements per line are printed.
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Convert
+{
+    class Convert 
+    {
+     static void Main(string[] args){
+float[]alpha = new float [50];
+for(int i = 0; i < 25; i++){
+    alpha [i] = i * i;
+}
+  for (int i = 25; i< alpha.Length; i++) {
+      alpha [i] = i * 3;
+  }
+  for (int i = 0; i< alpha.Length; i++) {
+      Console.Write(alpha [i] + " ");
+      if ((i+1)% 10 == 0){
+          Console.WriteLine();
+      }
+      }
+    }
+}
+} 
+
+Q6 Write a C# program that prompts the user to input a number .The program should then output the number and a message saying wether the number is positive ,negative ,or zero.
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Convert
+{
+    class Convert 
+    {
+     static void Main(string[] args){
+    
+    int number;
+       
+       Console.WriteLine("Enter the number");
+      number = int.Parse(Console.ReadLine());
+      if (number == 0){ 
+       Console.WriteLine(number + " is zero");
+      }
+      else if(number > 0){
+       Console.WriteLine(number + " is Positive");   
+      }
+      else { 
+      Console.WriteLine(number + " is Negative");   
+       }
+      }
+    }
+}
